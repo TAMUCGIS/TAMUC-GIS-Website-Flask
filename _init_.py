@@ -12,6 +12,20 @@ def main():
 def about():
     return render_template("about.html")
 
+@app.route("/affiliates/")
+def affiliates():
+    return render_template("affiliates.html")
+
+@app.route("/volunteerism/")
+def volunteerism():
+    return render_template("volunteerism.html")
+    
+@app.route("/projects/")
+def projects():
+    return render_template("projects.html")
+
+
+
 @app.route("/error404/")
 def error404():
     return render_template("error404.html")
