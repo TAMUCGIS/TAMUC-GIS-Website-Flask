@@ -24,7 +24,9 @@ def volunteerism():
 def projects():
     return render_template("projects.html")
 
-
+@app.route("/alumap/")
+def alumap():
+    return render_template("alumap.html")
 
 @app.route("/error404/")
 def error404():
