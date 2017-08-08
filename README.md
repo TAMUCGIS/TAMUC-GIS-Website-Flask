@@ -15,3 +15,5 @@ There will be a possibility of creating a login service, to update the maps, for
 Weather will also be included in map form, based upon the national weather service. 
 
 From a performance aspect, we will continue to use Flask, though some parts that are python, will possibly get updated in Cython.
+
+We will also look into making a blog, or a chat service, that is visible for what we are doing. 
