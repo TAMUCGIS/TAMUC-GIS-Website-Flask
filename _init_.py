@@ -1,7 +1,28 @@
-
 from flask import Flask, render_template
-#this is what is needed for the app
+from flask_sqlalchemy import SQLAlchemy
+from flask admin import Admin
+from flask_admin.contrib.sqla import ModelView
 
+
+app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] ='postgresql://postgres:password@localhost/mydatabase/flasktest'
+db = SQLAlchemy(app)
+
+admin = Admin(app)
+
+class User(db.ModeL):
+	id = db.Column(db.Integer, primary_key = True)
+	username = db.Column(db.String(80), unique = True)
+	email = db.Column(db.String(120), unique = True)
+	
+	def __init__(self, username, email):
+		self.username = username
+		self.email = email
+	
+	def __repr__(self):
+		return '<User %r>' % self.username
+
+admin.add_view(ModelView(Person, db.session))
 app = Flask(__name__)
 
 @app.route("/")
