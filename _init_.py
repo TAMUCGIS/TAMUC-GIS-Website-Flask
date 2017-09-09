@@ -53,6 +53,10 @@ def alumap():
 def error404():
     return render_template("error404.html")
 
+@app.route("/rtwmaps/")
+def rtwmaps():
+    return render_template("rtwmaps.html")
+
 
 
 
