@@ -6,6 +6,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
 	<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+	ead>
+ 	<link rel="stylesheet" href="./Leaflet-1.0.3/leaflet.css"/>
+  	<script src="./Leaflet-1.0.3/leaflet.js"></script>
+  	<style>
+    	#map{ height: 100% }
+  	</style>
 </head>
 <header>
 	<div class="dropdown">
@@ -23,7 +29,22 @@
 	</div>
 </header>
 <body>
-<src="mainmap.js">
+ <div id="map"></div>
+
+  <script>
+
+  // initialize the map
+  var map = L.map('map').setView([42.35, -71.08], 13);
+
+  // load a tile layer
+  L.tileLayer('http://tiles.mapc.org/basemap/{z}/{x}/{y}.png',
+    {
+      attribution: 'Tiles by <a href="http://mapc.org">MAPC</a>, Data by <a href="http://mass.gov/mgis">MassGIS</a>',
+      maxZoom: 17,
+      minZoom: 9
+    }).addTo(map);
+
+  </script>
 </body>
 <footer>
 	<div class="panel panel-default">
